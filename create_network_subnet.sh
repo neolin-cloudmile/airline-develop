@@ -3,7 +3,7 @@
 #Create a custom mode network
 gcloud compute networks create develop-newtork-sharedvpc \
     --subnet-mode=custom \
-    --bgp-routing-mode=regional
+    --bgp-routing-mode=global
 
 #== official-web-site-dev ==
 ##Adding subnets - official-website-dev for public-subnet-1
