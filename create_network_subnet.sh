@@ -24,23 +24,10 @@ gcloud compute networks subnets create official-website-private-subnet-1 \
     --range=10.240.134.0/24 \
     --region=asia-east1 \
     --enable-private-ip-google-access
-##Adding subnets - official-website-dev for private-subnet-2
-gcloud compute networks subnets create official-website-private-subnet-2 \
-    --network=develop-newtork-sharedvpc \
-    --range=10.240.136.0/24 \
-    --region=asia-east1 \
-    --enable-private-ip-google-access
 ##Adding subnets - official-website-dev for private-subnet-k8s 
 gcloud compute networks subnets create official-website-private-subnet-k8s \
     --network=develop-newtork-sharedvpc \
     --range=10.240.136.0/23 \
-    --region=asia-east1 \
-    --enable-private-ip-google-access
-
-##Adding subnets - official-website-dev for private-subnet-2
-gcloud compute networks subnets create official-website-private-subnet-2 \
-    --network=develop-newtork-sharedvpc \
-    --range=10.240.136.0/24 \
     --region=asia-east1 \
     --enable-private-ip-google-access
 
