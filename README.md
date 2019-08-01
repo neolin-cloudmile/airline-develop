@@ -1,7 +1,7 @@
 # airline-develop
 ## Deploy
 1. Enable API: Memorystore for Redis API<br />
-2.
+2. Create a redis and replica<br />
 
 ## Command Line
 1. List the redis instances<br />
