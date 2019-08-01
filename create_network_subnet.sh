@@ -88,3 +88,15 @@ gcloud compute networks subnets create starlux-private-subnet-k8s \
     --range=10.240.202.0/23 \
     --region=asia-east1 \
     --enable-private-ip-google-access
+
+#== Add/Remove the secondary-ranges of subnet
+## 1. Check secondary-ranges 
+## gcloud compute networks subnets describe official-website-private-subnet-k8s --region=asia-east1
+## 2. Add-secondary-ranges:
+## gcloud compute networks subnets update official-website-private-subnet-k8s \ 
+## --add-secondary-ranges official-website-pods=10.0.0.0/14,official-website-services=10.4.0.0/20 \ 
+## --region=asia-east1 
+## 3. Remove-secondary-ranges 
+## gcloud compute networks subnets update official-website-private-subnet-k8s \
+## --remove-secondary-ranges official-website-pods,official-website-services \
+## --region=asia-east1
