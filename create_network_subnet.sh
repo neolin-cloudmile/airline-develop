@@ -94,9 +94,9 @@ gcloud compute networks subnets create starlux-private-subnet-k8s \
 ## gcloud compute networks subnets describe official-website-private-subnet-k8s --region=asia-east1
 ## 2. Add-secondary-ranges:
 ## gcloud compute networks subnets update official-website-private-subnet-k8s \ 
-## --add-secondary-ranges official-website-pods=10.0.0.0/14,official-website-services=10.4.0.0/20 \ 
+## --add-secondary-ranges official-website-dev-pods=10.0.0.0/14,official-website-dev-services=10.4.0.0/20 \ 
 ## --region=asia-east1 
 ## 3. Remove-secondary-ranges 
 ## gcloud compute networks subnets update official-website-private-subnet-k8s \
-## --remove-secondary-ranges official-website-pods,official-website-services \
+## --remove-secondary-ranges official-website-dev-pods,official-website-dev-services \
 ## --region=asia-east1
