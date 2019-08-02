@@ -24,15 +24,21 @@ kubectl get configmaps redishost -o yaml<br />
 kubectl apply -f gke_deployment/visit-counter.yaml<br />
 8. Determine the [EXTERNAL-IP] address for this sample app<br />
 kubectl get service visit-counter<br />
+9. Get the pods
+kubectl get pods
+10. Delete the .yaml configuration to your cluster<br />
+kubectl delete -f gke_deployment/visit-counter.yaml<br />
 
 ## Reference Link
-1. Memorystore for Redis - Networking - Limited and unsupported networks<br />
+1. Cloud SDK - gcloud reference - overview
+https://cloud.google.com/sdk/gcloud/reference/
+2. Memorystore for Redis - Networking - Limited and unsupported networks<br />
 https://cloud.google.com/memorystore/docs/redis/networking#limited_and_unsupported_networks<br />
-2. Memorustore for Redis - Quickstart using the gcloud command-line tool<br />
+3. Memorustore for Redis - Quickstart using the gcloud command-line tool<br />
 https://cloud.google.com/memorystore/docs/redis/quickstart-gcloud<br />
-3. Memorystore for Redis - Connecting to a Redis instance from a Compute Engine VM<br /> 
+4. Memorystore for Redis - Connecting to a Redis instance from a Compute Engine VM<br /> 
 https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connecting-compute-engine<br />
-4. Memorystore for Redis - Connecting to a Redis instance from a Google Kubernetes Engine pod<br />
+5. Memorystore for Redis - Connecting to a Redis instance from a Google Kubernetes Engine pod<br />
 https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connecting-pod<br />
-5. Memorystore for Redis - From a Kubernetes Engine cluster - Sample appication<br />
+6. Memorystore for Redis - From a Kubernetes Engine cluster - Sample appication<br />
 https://cloud.google.com/memorystore/docs/redis/connect-redis-instance-gke#sample_application<br />
