@@ -24,10 +24,14 @@ kubectl get configmaps redishost -o yaml<br />
 kubectl apply -f gke_deployment/visit-counter.yaml<br />
 8. Determine the [EXTERNAL-IP] address for this sample app<br />
 kubectl get service visit-counter<br />
-9. Get the pods
-kubectl get pods
+9. Get the pods<be />
+kubectl get pods<br />
 10. Delete the .yaml configuration to your cluster<br />
 kubectl delete -f gke_deployment/visit-counter.yaml<br />
+11. List container images on Container Registry<br />
+gcloud container images list<br />
+12. Delete a images from Container Registry<br />
+gcloud container images delete gcr.io/official-website-dev/visit-counter:v1<br />
 
 ## Reference Link
 1. Cloud SDK - gcloud reference - overview
