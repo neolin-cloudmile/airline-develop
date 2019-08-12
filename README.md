@@ -34,15 +34,17 @@ gcloud container images list<br />
 gcloud container images delete gcr.io/official-website-dev/visit-counter:v1<br />
 
 ## Reference Link
-1. Cloud SDK - gcloud reference - overview
-https://cloud.google.com/sdk/gcloud/reference/
-2. Memorystore for Redis - Networking - Limited and unsupported networks<br />
+1. Cloud SDK - gcloud reference - overview<br />
+https://cloud.google.com/sdk/gcloud/reference/<br />
+2. Creating and managing Redis instances<br />
+https://cloud.google.com/memorystore/docs/redis/creating-managing-instances<br />
+3. Memorystore for Redis - Networking - Limited and unsupported networks<br />
 https://cloud.google.com/memorystore/docs/redis/networking#limited_and_unsupported_networks<br />
-3. Memorustore for Redis - Quickstart using the gcloud command-line tool<br />
+4. Memorustore for Redis - Quickstart using the gcloud command-line tool<br />
 https://cloud.google.com/memorystore/docs/redis/quickstart-gcloud<br />
-4. Memorystore for Redis - Connecting to a Redis instance from a Compute Engine VM<br /> 
+5. Memorystore for Redis - Connecting to a Redis instance from a Compute Engine VM<br /> 
 https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connecting-compute-engine<br />
-5. Memorystore for Redis - Connecting to a Redis instance from a Google Kubernetes Engine pod<br />
+6. Memorystore for Redis - Connecting to a Redis instance from a Google Kubernetes Engine pod<br />
 https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connecting-pod<br />
-6. Memorystore for Redis - From a Kubernetes Engine cluster - Sample appication<br />
+7. Memorystore for Redis - From a Kubernetes Engine cluster - Sample appication<br />
 https://cloud.google.com/memorystore/docs/redis/connect-redis-instance-gke#sample_application<br />
