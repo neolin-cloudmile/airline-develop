@@ -135,3 +135,5 @@ https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connec
 https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connecting-pod<br />
 7. Memorystore for Redis - From a Kubernetes Engine cluster - Sample appication<br />
 https://cloud.google.com/memorystore/docs/redis/connect-redis-instance-gke#sample_application<br />
+8. Establishing 99.9% Availability for Partner Interconnect <br />
+https://cloud.google.com/interconnect/docs/tutorials/partner-creating-999-availability
