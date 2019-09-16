@@ -89,6 +89,7 @@
 	```
 5. Requesting connections from your service provider
 6. Activating VLAN attachments
+
 	a. Describe each VLAN attachment to verify whether your service provider completed configuring them.
 	```
 	gcloud compute interconnects attachments describe attach-asia-east1-a --region asia-east1 --format '(name,state,partnerMetadata)'
@@ -105,6 +106,7 @@
 	```
 7. Configuring Routers
 Google automatically adds a BGP peer on each Cloud Router. For layer 2 connections, you must add your on-premises ASN to each BGP peer. For layer 3 connections, you don't need to do anything; Google automatically configures your Cloud Routers with your service provider's ASN.
+
 	a. Describe the Cloud Router that's associated with the attached-asia-east1-a VLAN attachment. In the output, find the name of the automatically created BGP peer that's associated with your VLAN attachment.
 	```
 	gcloud compute routers describe router-asia-east1-a --region asia-east1
