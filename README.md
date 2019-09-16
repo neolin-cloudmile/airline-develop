@@ -89,14 +89,14 @@
 	```
 5. Requesting connections from your service provider
 6. Activating VLAN attachments
-a. Describe each VLAN attachment to verify whether your service provider completed configuring them.
+	a. Describe each VLAN attachment to verify whether your service provider completed configuring them.
 	```
 	gcloud compute interconnects attachments describe attach-asia-east1-a --region asia-east1 --format '(name,state,partnerMetadata)'
 	```
 	```
 	gcloud compute interconnects attachments describe attach-asia-east1-b --region asia-east1 --format '(name,state,partnerMetadata)'
 	```
-b. If the correct service provider has configured your VLAN attachments, activate them by using the -- adminEnabled.
+	b. If the correct service provider has configured your VLAN attachments, activate them by using the -- adminEnabled.
 	```
 	gcloud compute interconnects attachments partner update attach-asia-east1-a --region asia-east1 --admin-enabled
 	```
@@ -105,12 +105,12 @@ b. If the correct service provider has configured your VLAN attachments, activat
 	```
 7. Configuring Routers
 Google automatically adds a BGP peer on each Cloud Router. For layer 2 connections, you must add your on-premises ASN to each BGP peer. For layer 3 connections, you don't need to do anything; Google automatically configures your Cloud Routers with your service provider's ASN.
-a. Describe the Cloud Router that's associated with the attached-asia-east1-a VLAN attachment. In the output, find the name of the automatically created BGP peer that's associated with your VLAN attachment.
+	a. Describe the Cloud Router that's associated with the attached-asia-east1-a VLAN attachment. In the output, find the name of the automatically created BGP peer that's associated with your VLAN attachment.
 	```
 	gcloud compute routers describe router-asia-east1-a --region asia-east1
 	gcloud compute routers describe router-asia-east1-b --region asia-east1
 	```
-b. Update the BGP peer with your on-premises router's ASN.
+	b. Update the BGP peer with your on-premises router's ASN.
 	```
 	gcloud compute routers update-bgp-peer router-asia-east1-a --peer-name auto-ia-bgp-attachment-asia-east1-a-c2c53a710bd6c2e --peer-asn [ON-PREM ASN] --region asia-east1
 	```
