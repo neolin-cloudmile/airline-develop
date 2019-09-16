@@ -139,5 +139,7 @@ https://cloud.google.com/memorystore/docs/redis/connect-redis-instance-gke#sampl
 https://cloud.google.com/interconnect/docs/how-to/partner/provisioning-overview
 9. Establishing 99.9% Availability for Partner Interconnect <br />
 https://cloud.google.com/interconnect/docs/tutorials/partner-creating-999-availability
-10. Viewing Router Status and Advertised Routes<br />
+10. Establishing 99.99% Availability for Partner Interconnect<br />
+https://cloud.google.com/interconnect/docs/tutorials/partner-creating-9999-availability
+11. Viewing Router Status and Advertised Routes<br />
 https://cloud.google.com/router/docs/how-to/viewing-router-details
