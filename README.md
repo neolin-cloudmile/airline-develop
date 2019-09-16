@@ -68,13 +68,17 @@
 3. Creating VLAN attachments
 	```
 	gcloud compute interconnects attachments partner create attach-asia-east1-a --router router-asia-east1-a --region asia-east1 --edge-availability-domain availability-domain-1
-Created [https://www.googleapis.com/compute/v1/projects/develop-247613/regions/asia-east1/interconnectAttachments/attach-asia-east1-a].
+	```
+	```
+	Created [https://www.googleapis.com/compute/v1/projects/develop-247613/regions/asia-east1/interconnectAttachments/attach-asia-east1-a].
       Please use the pairing key to provision the attachment with your partner:
       9a2894c9-67ec-417f-bc97-c9623a517051/asia-east1/1
 	```
 	```
 	gcloud compute interconnects attachments partner create attach-asia-east1-b --router router-asia-east1-b --region asia-east1 --edge-availability-domain availability-domain-2
-Created [https://www.googleapis.com/compute/v1/projects/develop-247613/regions/asia-east1/interconnectAttachments/attach-asia-east1-b].
+	```
+	```
+	Created [https://www.googleapis.com/compute/v1/projects/develop-247613/regions/asia-east1/interconnectAttachments/attach-asia-east1-b].
       Please use the pairing key to provision the attachment with your partner:
       eae57156-6fc1-49d1-ada3-c32b5a21c189/asia-east1/2
 	```
