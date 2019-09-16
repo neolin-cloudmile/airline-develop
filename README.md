@@ -58,35 +58,91 @@
 	```
 
 ## Establishing 99.9% Availability for Partner Interconnect
-1. Create the VPC network
-	a. Create a custom subnet network.
-		```
-		gcloud compute networks create vpc1 \
-  		--subnet-mode custom \
-  		--bgp-routing-mode global
-  		```
-	b. Specify the subnet prefixes for the us-central1 and us-east4 regions.
-		gcloud compute networks subnets create subnet-uscentral1 \
-  		```
-  		--network vpc1 \
-  		--region us-central1 \
-  		--range 192.168.1.0/24
-  		```
+
+1. Creating the VPC Network
 2. Creating Cloud Routers
 	```
-	gcloud compute routers create router-central-a 
-   --asn 16550 
-   --network vpc1 
-   --region us-central1
-   ```
-   ```
-    gcloud compute routers create router-central-b 
-   --asn 16550 
-   --network vpc1 
-   --region us-central1
-   ```
-3. 
-
+	gcloud compute routers create router-asia-east1-a --asn 16550 --network develop-newtork-sharedvpc --region asia-east1
+	gcloud compute routers create router-asia-east1-b --asn 16550 --network develop-newtork-sharedvpc --region asia-east1
+	```
+3. Creating VLAN attachments
+	```
+	gcloud compute interconnects attachments partner create attach-asia-east1-a --router router-asia-east1-a --region asia-east1 --edge-availability-domain availability-domain-1
+Created [https://www.googleapis.com/compute/v1/projects/develop-247613/regions/asia-east1/interconnectAttachments/attach-asia-east1-a].
+      Please use the pairing key to provision the attachment with your partner:
+      9a2894c9-67ec-417f-bc97-c9623a517051/asia-east1/1
+	```
+	```
+	gcloud compute interconnects attachments partner create attach-asia-east1-b --router router-asia-east1-b --region asia-east1 --edge-availability-domain availability-domain-2
+Created [https://www.googleapis.com/compute/v1/projects/develop-247613/regions/asia-east1/interconnectAttachments/attach-asia-east1-b].
+      Please use the pairing key to provision the attachment with your partner:
+      eae57156-6fc1-49d1-ada3-c32b5a21c189/asia-east1/2
+	```
+4. Retrieving pairing keys
+	```
+	gcloud compute interconnects attachments describe attach-asia-east1-a --region asia-east1
+	gcloud compute interconnects attachments describe attach-asia-east1-b --region asia-east1
+	```
+5. Requesting connections from your service provider
+6. Activating VLAN attachments
+a. Describe each VLAN attachment to verify whether your service provider completed configuring them.
+	```
+	gcloud compute interconnects attachments describe attach-asia-east1-a --region asia-east1 --format '(name,state,partnerMetadata)'
+	```
+	```
+	gcloud compute interconnects attachments describe attach-asia-east1-b --region asia-east1 --format '(name,state,partnerMetadata)'
+	```
+b. If the correct service provider has configured your VLAN attachments, activate them by using the -- adminEnabled.
+	```
+	gcloud compute interconnects attachments partner update attach-asia-east1-a --region asia-east1 --admin-enabled
+	```
+	```
+	gcloud compute interconnects attachments partner update attach-asia-east1-b --region asia-east1 --admin-enabled
+	```
+7. Configuring Routers
+Google automatically adds a BGP peer on each Cloud Router. For layer 2 connections, you must add your on-premises ASN to each BGP peer. For layer 3 connections, you don't need to do anything; Google automatically configures your Cloud Routers with your service provider's ASN.
+a. Describe the Cloud Router that's associated with the attached-asia-east1-a VLAN attachment. In the output, find the name of the automatically created BGP peer that's associated with your VLAN attachment.
+	```
+	gcloud compute routers describe router-asia-east1-a --region asia-east1
+	gcloud compute routers describe router-asia-east1-b --region asia-east1
+	```
+b. Update the BGP peer with your on-premises router's ASN.
+	```
+	gcloud compute routers update-bgp-peer router-asia-east1-a --peer-name auto-ia-bgp-attachment-asia-east1-a-c2c53a710bd6c2e --peer-asn [ON-PREM ASN] --region asia-east1
+	```
+	```
+	gcloud compute routers update-bgp-peer router-asia-east1-b --peer-name auto-ia-bgp-attachment-asia-east1-b-c2c53a710bd6c2e --peer-asn [ON-PREM ASN] --region asia-east1
+	```
+	```
+	gcloud compute interconnects attachments describe attach-central-a \
+  	--region us-central1 \
+  	--router router-central-a \
+  	--format '(name,state,partnerMetadata)'
+	```
+	```
+	gcloud compute interconnects attachments describe attach-central-a \
+  	--region us-central1 \
+  	--router router-central-a \
+  	--format '(name,state,partnerMetadata)'
+  	```
+  	```
+	gcloud compute interconnects attachments describe attach-central-a \
+  	--region us-central1 \
+  	--router router-central-a \
+  	--format '(name,state,partnerMetadata)'
+	```
+	```
+	gcloud compute interconnects attachments describe attach-central-a \
+  	--region us-central1 \
+  	--router router-central-a \
+  	--format '(name,state,partnerMetadata)'
+	```
+	```
+	gcloud compute interconnects attachments describe attach-central-a \
+  	--region us-central1 \
+  	--router router-central-a \
+  	--format '(name,state,partnerMetadata)'
+	```
 
 ## Reference Link
 1. Cloud SDK - gcloud reference - overview<br />
