@@ -119,36 +119,6 @@ Google automatically adds a BGP peer on each Cloud Router. For layer 2 connectio
 	```
 	gcloud compute routers update-bgp-peer router-asia-east1-b --peer-name auto-ia-bgp-attachment-asia-east1-b-c2c53a710bd6c2e --peer-asn [ON-PREM ASN] --region asia-east1
 	```
-	```
-	gcloud compute interconnects attachments describe attach-central-a \
-  	--region us-central1 \
-  	--router router-central-a \
-  	--format '(name,state,partnerMetadata)'
-	```
-	```
-	gcloud compute interconnects attachments describe attach-central-a \
-  	--region us-central1 \
-  	--router router-central-a \
-  	--format '(name,state,partnerMetadata)'
-  	```
-  	```
-	gcloud compute interconnects attachments describe attach-central-a \
-  	--region us-central1 \
-  	--router router-central-a \
-  	--format '(name,state,partnerMetadata)'
-	```
-	```
-	gcloud compute interconnects attachments describe attach-central-a \
-  	--region us-central1 \
-  	--router router-central-a \
-  	--format '(name,state,partnerMetadata)'
-	```
-	```
-	gcloud compute interconnects attachments describe attach-central-a \
-  	--region us-central1 \
-  	--router router-central-a \
-  	--format '(name,state,partnerMetadata)'
-	```
 
 ## Reference Link
 1. Cloud SDK - gcloud reference - overview<br />
